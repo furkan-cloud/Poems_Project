@@ -10,11 +10,15 @@ import {
 import {numberItem} from '../styles';
 
 const NumberItem = (props) => {
+  // console.log(props.item.isCheck)
   return (
-    <TouchableOpacity style={numberItem.container} >
-      <Text style={numberItem.text}>{props.item}</Text>
+    <TouchableOpacity 
+    onPress={()=>props.onChange()}
+    style={[numberItem.container,{backgroundColor:props.item.isCheck ? "blue":"black"}]}>
+      <Text style={numberItem.text}>{props.item.number}</Text>
     </TouchableOpacity>
   );
 };
 
 export {NumberItem};
+// {backgroundColor:props.item.isCheck?"#2196f3":"black"}
