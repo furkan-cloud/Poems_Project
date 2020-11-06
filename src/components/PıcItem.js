@@ -6,27 +6,26 @@ import {
   TouchableOpacity,
   FlatList,
   Image,
-  ImageBackground
+  ImageBackground,
+  Dimensions,
+  TouchableHighlight
 } from 'react-native';
 
-import {numberItem} from '../styles';
-
-
-
-
+import {numberItem, picItem} from '../styles';
 
 const PıcItem = (props) => {
-  
+  console.log(props.item.img);
   return (
-    
-    <TouchableOpacity style={numberItem.container} >
-      {/* <ImageBackground source={require("../assets/morning.jpg")}> */}
-      <Text style={numberItem.text}>{props.item.name}</Text>
-      <Text style={numberItem.text}>{props.item.period}</Text>
-      {/* </ImageBackground> */}
-      
-    </TouchableOpacity>
-    
+    <TouchableHighlight style={picItem.general}>
+      <ImageBackground imageStyle={{ borderRadius: 20 }}
+                       style={picItem.container}
+                       source={props.item.img}>
+        <Text style={picItem.text}>{props.item.name}</Text>
+        <Text style={picItem.text}>{props.item.period}</Text>
+      </ImageBackground>
+    </TouchableHighlight>
+
+
   );
 };
 
