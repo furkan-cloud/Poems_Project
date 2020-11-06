@@ -94,6 +94,69 @@ export const button = StyleSheet.create({
     fontSize: 18,
   },
 });
+export const picItem = StyleSheet.create({
+  container:{
+    width:Dimensions.get("window").width/2.6,
+    height:Dimensions.get("window").height/5.2,
+    borderRadius:20,
+    justifyContent:"center",
+    opacity:0.8
+    
+  },
+  text:{
+    fontWeight: 'bold',
+    color: 'white',
+    alignSelf: 'center',
+    fontSize: 20,
+  },
+  general:{
+    borderRadius: 20,
+    borderWidth: 1,
+    borderWidth:2,
+    borderColor:"#2196f3",
+    margin: 20,
+  },
+  viewNumbers: {   
+    
+  },
+});
+
+export const interestItem = StyleSheet.create({
+  general: {
+    justifyContent: 'space-around',
+
+    flex: 1,
+    backgroundColor: 'black',
+  },
+  poemContainer: {
+    justifyContent: 'center',
+    marginTop:40
+  },
+  poemText: {
+    color: 'white',
+    fontFamily: 'Roboto',
+    fontSize: 25,
+    fontStyle: 'italic',
+    textAlign: 'center',
+    marginHorizontal:32
+   
+  },
+  viewNumbersInt: {
+    
+    justifyContent: 'center',
+
+    alignItems:"center",
+    height:Dimensions.get("window").height/1.9
+            
+  },
+  buttonView: {
+    alignItems: 'center',
+    marginBottom:30
+   
+  },
+})
+
+
 export const beginItem = StyleSheet.create({
   container:{
     justifyContent:"space-evenly",
