@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   FlatList,
+  TouchableHighlight
 } from 'react-native';
 
 import {numberItem} from '../styles';
@@ -12,11 +13,11 @@ import {numberItem} from '../styles';
 const NumberItem = (props) => {
   // console.log(props.item.isCheck)
   return (
-    <TouchableOpacity 
+    <TouchableHighlight
     onPress={()=>props.onChange()}
     style={[numberItem.container,{backgroundColor:props.item.isCheck ? "blue":"black"}]}>
       <Text style={numberItem.text}>{props.item.number}</Text>
-    </TouchableOpacity>
+    </TouchableHighlight>
   );
 };
 
