@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import {SafeAreaView, View, Text, ScrollView,FlatList} from 'react-native';
 import {NumberItem, Button} from '../components';
 import {numberItem, enterPoem} from '../styles';
@@ -10,26 +10,24 @@ const numbers = [
   {id:3,number: 15, isCheck: false},
 ];
 
+
+
 const EnterPoem = (props) => {
   const [list, setList] = useState(numbers);
-
+  
   function selectPage() {
     props.navigation.navigate('Period');
   }
 
-  function changeColor(nums) {
+ async function changeColor(nums) {
     const newList =list
-    // console.log(newList)
     const numberIndex = newList.findIndex(item=>item.id==nums)
     newList[numberIndex].isCheck = !newList[numberIndex].isCheck
-    console.log(numberIndex)
     setList(newList)
   }
 
 
-  useEffect(() => {
-    renderNumber
-  },list);
+
 
 const renderNumber= ({item})=>{
   return(
@@ -70,12 +68,3 @@ const renderNumber= ({item})=>{
 export {EnterPoem};
 
 
-// {list.map((nums) => {
-//   return (
-//     <NumberItem
-//       key={nums.id}
-//       item={nums}
-//       onChange={() => changeColor(nums.id)}
-//     />
-//   );
-// })
