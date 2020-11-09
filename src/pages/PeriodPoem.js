@@ -1,40 +1,58 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {SafeAreaView, View, Text, Image,FlatList} from 'react-native';
 
 import {PıcItem, Button} from '../components';
 import {numberItem, enterPoem,picItem} from '../styles';
 
 const pics = [
-  {id: 1, img: require('../assets/morning.jpg'), name: 'Morning', period: '06-12'},
+  {id: 1,
+    img: require('../assets/morning.jpg'),
+    name: 'Morning',
+    period: '06-12',
+    isCheck: false
+  },
   {
     id: 2,
     img: require('../assets/noon.jpg'),
     name: 'Noon',
     period: '12-18',
+    isCheck: false
   },
   {
     id: 3,
     img: require('../assets/evening.jpg'),
     name: 'Evening',
     period: '18-00',
+    isCheck: false
   },
   {
     id: 4,
-    img: require('../assets/evening.jpg'),
+    img: require('../assets/night.jpg'),
     name: 'Night',
     period: '00-06',
+    isCheck: false
   },
 ];
 
 const PeriodPoem = (props) => {
+  const [alist, setaList] = useState(pics);
+
   function selectPage() {
     props.navigation.navigate('Interest');
   }
-
+  function changeColor(nums) {
+    const newLista =alist
+    const numbersIndex = newLista.findIndex(item=>item.id==nums)
+    newLista[numbersIndex].isCheck = !newLista[numbersIndex].isCheck
+    console.log(numbersIndex)
+    setaList(newLista)
+  }
 
 const renderPics=({item})=>{
   return(
-    <PıcItem  item={item} />
+    <PıcItem  item={item} 
+    onChange={() => changeColor(item.id)}
+    />
   )
 }
 
@@ -49,7 +67,7 @@ const renderPics=({item})=>{
 
         <View style={picItem.viewNumbers}>
           <FlatList
-          data={pics}
+          data={alist}
           renderItem={renderPics}
           keyExtractor={(item,index)=>index.toString()}
           numColumns={2}
@@ -71,8 +89,3 @@ const renderPics=({item})=>{
 
 export {PeriodPoem};
 
-
-// {pics.map((pic,idx ) => {
-            
-//   return <PıcItem key={pic.id} item={pic} />;
-// })}
