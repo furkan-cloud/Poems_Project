@@ -21,25 +21,25 @@ export const numberItem = StyleSheet.create({
     height: Dimensions.get('window').height / 6.1,
     justifyContent: 'center',
     alignContent: 'center',
-    flexWrap: 'wrap',
+    // flexWrap: 'wrap',
     borderWidth: 1,
     borderColor: "#2196f3",
-    margin: 20,
+    margin: 27,
   },
   text: {
     fontWeight: 'bold',
-    color: 'white',
+    
     alignSelf: 'center',
-    fontSize: 20,
+    fontSize: 36,
   },
   poemContainer: {
     justifyContent: 'center',
     marginTop:40
   },
   poemText: {
-    color: 'red',
+    color: 'white',
     fontFamily: 'Roboto',
-    fontSize: 20,
+    fontSize: 25,
     fontStyle: 'italic',
     textAlign: 'center',
     marginHorizontal:32
@@ -49,9 +49,9 @@ export const numberItem = StyleSheet.create({
     marginTop:-40
   },
   underText: {
-    color: 'red',
+    color: 'white',
     fontFamily: 'Roboto',
-    fontSize: 15,
+    fontSize: 16,
     fontStyle: 'italic',
     textAlign: 'center',
     marginHorizontal:32
@@ -59,11 +59,10 @@ export const numberItem = StyleSheet.create({
   },
 
   viewNumbers: {
-    flexDirection:"row",
-    justifyContent: 'center',
-    flexWrap:"wrap",
 
-    alignItems:"center",
+    justifyContent:"center",
+    
+    
     
             
   },
@@ -94,20 +93,21 @@ export const button = StyleSheet.create({
     fontSize: 18,
   },
 });
+
 export const picItem = StyleSheet.create({
   container:{
     width:Dimensions.get("window").width/2.6,
     height:Dimensions.get("window").height/5.2,
     borderRadius:20,
     justifyContent:"center",
-    opacity:0.8
+    
     
   },
   text:{
     fontWeight: 'bold',
-    color: 'white',
+    color: 'purple',
     alignSelf: 'center',
-    fontSize: 20,
+    fontSize: 24,
   },
   general:{
     borderRadius: 20,
@@ -119,6 +119,15 @@ export const picItem = StyleSheet.create({
   viewNumbers: {   
     
   },
+  pressableStyle:{
+    width: Dimensions.get('window').width / 14,
+    height: Dimensions.get('window').height / 30,
+    justifyContent: 'center',
+    borderRadius: 30,
+    position: 'absolute',
+    top: 3,
+    right: 3,
+  }
 });
 
 export const interestItem = StyleSheet.create({
@@ -155,7 +164,6 @@ export const interestItem = StyleSheet.create({
    
   },
 })
-
 
 export const beginItem = StyleSheet.create({
   container:{
