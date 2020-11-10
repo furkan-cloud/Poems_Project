@@ -34,7 +34,7 @@ const Begin = (props) => {
           </View>
         </View>
         <View style={beginItem.buttonView}>
-          <TouchableOpacity style={beginItem.buttonContainer}>
+          <TouchableOpacity style={beginItem.buttonContainer} onPress = {() => props.navigation.navigate("App")}>
             <Text style={beginItem.buttonText}>Begin</Text>
           </TouchableOpacity>
         </View>
