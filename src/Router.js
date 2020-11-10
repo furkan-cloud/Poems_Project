@@ -94,6 +94,8 @@ function Router() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
+}
 
 export default Router;
+
+// deneme selim
