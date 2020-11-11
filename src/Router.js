@@ -3,6 +3,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import SplashScreen from 'react-native-splash-screen';
+import { useEffect } from 'react';
 
 import {
   EnterPoem,
@@ -20,6 +22,12 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function App() {
+
+
+  useEffect( () => {
+    SplashScreen.hide()
+  }, []);
+  
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -97,5 +105,3 @@ function Router() {
 }
 
 export default Router;
-
-// deneme selim1
